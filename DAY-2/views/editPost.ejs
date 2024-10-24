@@ -1,0 +1,20 @@
+<%- include('./layout'); %>
+
+<h2>게시글 수정</h2>
+<form action="/posts/<%= post.id %>/edit" method="POST">
+  <label for="title">제목:</label>
+  <input
+    type="text"
+    id="title"
+    name="title"
+    value="<%= post.title %>"
+    required
+  />
+
+  <label for="content">내용:</label>
+  <textarea id="content" name="content" rows="10" required>
+<%= post.content %></textarea
+  >
+
+  <button type="submit">수정 완료</button>
+</form>
