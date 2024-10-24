@@ -27,8 +27,6 @@ app.use(
   })
 );
 
-app.use(loggerMiddleware);
-
 // 라우팅
 app.use("/", authRoutes);
 app.use("/posts", postRoutes);

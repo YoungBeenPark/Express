@@ -30,7 +30,7 @@ app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
   // 간단한 인증 로직(실제로는 데이터베이스 조회 필요함)
-  if (username === "youngbeen" && password === "qwe123") {
+  if (username === "qwe" && password === "qwe123") {
     req.session.user = { username, role: "admin" };
     res.redirect("/dashboard");
   } else {

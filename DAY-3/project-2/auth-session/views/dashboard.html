@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <title>Dashboard</title>
+  </head>
 
-<head>
+  <body>
+    <div class="box">
+      <div class="class">
+        <h1>🎃🎃🎃🎃🎃🎃🎃🎃</h1>
+        <h5>Dashboard</h5>
+        <p>Welcome, <span id="username"></span>!</p>
+      </div>
+    </div>
+    <a href="/logout">Logout</a>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <title>Dashboard</title>
-
-</head>
-
-<body>
-
-  <h1>Dashboard</h1>
-  <p>Welcome, <span id="username"></span>!</p>
-  <a href="/logout">Logout</a>
-
-  <script>
-    fetch('/api/user')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('username').textContent = data.username;
-    });
-  </script>
-
-</body>
+    <script>
+      fetch("/api/user")
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("username").textContent = data.username;
+        });
+    </script>
+    <p>곧 할로윈이라니...😭</p>
+  </body>
 </html>
