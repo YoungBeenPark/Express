@@ -1,6 +1,6 @@
   {
     "name": "project1",
-    "version": "4.0.0",
+    "version": "1.0.0",
     "description": "User Login and Signup Form with Express, EJS, MongoDB",
     "main": "server.js",
     "scripts": {
