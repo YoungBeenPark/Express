@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title><%= product.name %> 상세 정보</title>
-  <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-  <h1><%= product.name %></h1>
-  <p>가격: $<%= product.price %></p>
-  <p>재고: <%= product.stock %></p>
-  <p>설명: <%= product.description %></p>
-  <a href="/order/<%= product._id %>">주문하기</a>
-  <br>
-  <a href="/products">제품 목록으로 돌아가기</a>
-  <br>
-  <a href="/logout">로그아웃</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= product.name %> 상세 정보</title>
+    <link rel="stylesheet" href="/product.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="product-card">
+        <h1><%= product.name %></h1>
+        <p class="price">가격: $<%= product.price %></p>
+        <p class="stock">재고: <%= product.stock %></p>
+        <p class="description">설명: <%= product.description %></p>
+        <a href="/order/<%= product._id %>" class="order-button">주문하기</a>
+      </div>
+      <div class="links">
+        <a href="/products">제품 목록으로 돌아가기</a>
+        <br />
+        <a href="/logout">로그아웃</a>
+      </div>
+    </div>
+  </body>
 </html>

@@ -3,30 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <title>주문 완료</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/orderConfirmation.css" />
   </head>
   <body>
-    <h1>주문이 완료되었습니다!</h1>
-    <p>주문 번호: <%= order._id %></p>
-    <h2>주문 상세 정보</h2>
-    <ul>
-      <% order.products.forEach(item => { %>
-      <li>
-        <strong>제품:</strong> <%= item.name %> <br />
-        <strong>수량:</strong> <%= item.quantity %> <br />
-        <strong>가격:</strong> $<%= item.price * item.quantity %> <br />
-      </li>
-      <% }) %>
-    </ul>
-    <h3>배송 정보</h3>
-    <p>주소: <%= order.shippingInfo.address %></p>
-    <p>도시: <%= order.shippingInfo.city %></p>
-    <p>우편번호: <%= order.shippingInfo.postalCode %></p>
-    <p>국가: <%= order.shippingInfo.country %></p>
-    <p>주문 상태: <%= order.orderStatus %></p>
-    <br />
-    <a href="/products">제품 목록으로 돌아가기</a>
-    <br />
-    <a href="/logout">로그아웃</a>
+    <div class="container">
+      <h1>주문이 완료되었습니다!</h1>
+      <p class="order-number">주문 번호: <%= order._id %></p>
+
+      <h2>주문 상세 정보</h2>
+      <ul class="order-details">
+        <% order.products.forEach(item => { %>
+        <li class="order-item">
+          <strong>제품:</strong> <%= item.name %> <br />
+          <strong>수량:</strong> <%= item.quantity %> <br />
+          <strong>가격:</strong> $<%= (item.price * item.quantity) %>
+          <br />
+        </li>
+        <% }) %>
+      </ul>
+
+      <h3>배송 정보</h3>
+      <div class="shipping-info">
+        <p><strong>주소:</strong> <%= order.shippingInfo.address %></p>
+        <p><strong>도시:</strong> <%= order.shippingInfo.city %></p>
+        <p><strong>우편번호:</strong> <%= order.shippingInfo.postalCode %></p>
+        <p><strong>국가:</strong> <%= order.shippingInfo.country %></p>
+        <p><strong>주문 상태:</strong> <%= order.orderStatus %></p>
+      </div>
+
+      <div class="navigation">
+        <a href="/products" class="button">제품 목록으로 돌아가기</a>
+        <a href="/logout" class="button">로그아웃</a>
+      </div>
+    </div>
   </body>
 </html>
