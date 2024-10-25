@@ -13,13 +13,13 @@
   <form action="/signup" method="POST">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
     <label for="username">사용자명:</label>
-    <input type="text" id="username" name="username" required minlength="2"> // 사용자명 최소 2글자 이상
+    <input type="text" id="username" name="username" required minlength="3"> // 사용자명 최소 3글자 이상
     <br>
     <label for="email">이메일:</label>
     <input type="email" id="email" name="email" required>
     <br>
     <label for="password">비밀번호:</label>
-    <input type="password" id="password" name="password" required minlength="4"> // 비밀번호 최소 4글자 이상
+    <input type="password" id="password" name="password" required minlength="6"> // 비밀번호 최소 6글자 이상
     <br>
     <label for="confirmPassword">비밀번호 확인:</label>
     <input type="password" id="confirmPassword" name="confirmPassword" required minlength="4">
